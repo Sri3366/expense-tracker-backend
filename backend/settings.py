@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-key-for-local-dev')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.render.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.render.com','expense-tracker-backend-wcl5.onrender.com']
 
 
 # Application definition
@@ -131,5 +131,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
-    os.environ.get('FRONTEND_URL', '')
+    os.environ.get('FRONTEND_URL', 'expense-tracker-frontend-r3olsge7k-venkatchs-projects.vercel.app')
 ]
