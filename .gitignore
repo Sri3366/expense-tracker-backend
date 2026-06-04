@@ -1,0 +1,15 @@
+# Virtual Environments
+myenv/
+venv/
+.venv/
+
+# Python caching mechanism files
+**/__pycache__/
+*.pyc
+
+# Environment configurations
+.env
+*.env
+
+# Databases
+*.sqlite3
