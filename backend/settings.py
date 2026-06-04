@@ -131,5 +131,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
-    os.environ.get('FRONTEND_URL', 'expense-tracker-frontend-r3olsge7k-venkatchs-projects.vercel.app')
+    os.environ.get('FRONTEND_URL', '')
+]
+# Add these lines right below your CORS_ALLOWED_ORIGINS array
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
 ]
