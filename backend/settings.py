@@ -131,7 +131,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
+    # 1. Your Main Production Vercel Domain (Find this in your Vercel Project Overview)
+    "https://expense-tracker-frontend-venkatchs-projects.vercel.app", 
+    
+    # 2. Your current preview URL just to be absolutely safe right now
     "https://expense-tracker-frontend-r3olsge7k-venkatchs-projects.vercel.app"
+]
+
+# Add this magic fallback flag directly below the array:
+# This allows subdomains/preview builds from vercel.app to cleanly communicate with your API
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://expense-tracker-frontend-.*\.vercel\.app$",
 ]
 # Add these lines right below your CORS_ALLOWED_ORIGINS array
 CORS_ALLOW_HEADERS = [
@@ -153,4 +163,9 @@ CORS_ALLOW_METHODS = [
     'PATCH',
     'POST',
     'PUT',
+]
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "https://expense-tracker-frontend-venkatchs-projects.vercel.app",
+    "https://expense-tracker-frontend-r3olsge7k-venkatchs-projects.vercel.app"
 ]
